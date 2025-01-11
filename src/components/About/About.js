@@ -9,10 +9,10 @@ const About = () => {
         animate={{width:"100%"}} 
         exit={{x:"100%", transition:{duration:1}}}
         name='about' 
-        className='current-page w-full h-screen bg-[#bd8049] '>
+        className='current-page w-full h-screen bg-[#bd8049] overflow-y-auto'>
 
             <div className='flex flex-col justify-center items-center w-full h-full'>
-                <div className='max-w-[1000px] w-full px-4 grid-col2 gap-8 sm:text-center'>
+                <div className='max-w-[1000px] w-full px-4 grid-cols-2 gap-8 sm:text-center'>
                 <div className='pb-8'>
                     <p className='text-6xl font-bold text-center'>Samuel Hsu</p>
                 </div>
