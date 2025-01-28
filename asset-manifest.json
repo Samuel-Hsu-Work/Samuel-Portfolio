@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Samuel-Portfolio/static/css/main.c98f083e.css",
-    "main.js": "/Samuel-Portfolio/static/js/main.70700ad4.js",
+    "main.css": "/Samuel-Portfolio/static/css/main.e5d6357b.css",
+    "main.js": "/Samuel-Portfolio/static/js/main.7b88c99a.js",
     "static/media/theme2.mkv": "/Samuel-Portfolio/static/media/theme2.e24566efebae76b5a7d2.mkv",
     "static/media/theme.mkv": "/Samuel-Portfolio/static/media/theme.296d0bd6159b380c395b.mkv",
     "static/media/Logo.webp": "/Samuel-Portfolio/static/media/Logo.99f16f124d7b796e6483.webp",
@@ -14,11 +14,11 @@
     "static/media/Sun.svg": "/Samuel-Portfolio/static/media/Sun.681607dcda2a01539a9a8a157ae74e6e.svg",
     "static/media/Moon.svg": "/Samuel-Portfolio/static/media/Moon.0a6a2b75ac51157455302ddcfca385c0.svg",
     "index.html": "/Samuel-Portfolio/index.html",
-    "main.c98f083e.css.map": "/Samuel-Portfolio/static/css/main.c98f083e.css.map",
-    "main.70700ad4.js.map": "/Samuel-Portfolio/static/js/main.70700ad4.js.map"
+    "main.e5d6357b.css.map": "/Samuel-Portfolio/static/css/main.e5d6357b.css.map",
+    "main.7b88c99a.js.map": "/Samuel-Portfolio/static/js/main.7b88c99a.js.map"
   },
   "entrypoints": [
-    "static/css/main.c98f083e.css",
-    "static/js/main.70700ad4.js"
+    "static/css/main.e5d6357b.css",
+    "static/js/main.7b88c99a.js"
   ]
 }
