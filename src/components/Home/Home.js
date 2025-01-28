@@ -70,7 +70,7 @@ const Home = () => {
     <motion.img
             src={Samuel}
             alt="Samuel Background"
-            className="absolute top-1/4 right-1/4 w-50 h-50 opacity-50"
+            className="absolute top-1/4 right-1/4 w-1/4  opacity-50"
             animate={randomControls}
           />
 

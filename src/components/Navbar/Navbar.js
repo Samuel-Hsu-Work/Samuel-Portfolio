@@ -10,30 +10,32 @@ const Navbar = () => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
     return (
-        <div className='button-container fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-50'>
-            <div className='flex items-center'>
-                <img src={logo} style={{ width: '90px', height: '80px' }}/>
+        <div className='button-container fixed w-full flex justify-between items-center'>
+            <div className='items-center'>
+                <Link to='/' smooth={true} duration={500}>
+                    <img src={logo} style={{ width: '8%', height: '8%' }}/>
+                </Link>
                 <DarkMode />
             </div>
-            <ul className='hidden md:flex text-emerald-400 font-medium transition-all  ease-in-out space-x-6 absolute left-1/2 -translate-x-1/2 text-3xl'>
             
-                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-emerald-400 duration-300 ... rounded-full 
+            <ul className='hidden md:flex text-[#6DBBFA] font-medium transition-all  ease-in-out space-x-6 absolute left-1/2 -translate-x-1/2 text-3xl'>
+                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-[#6DBBFA] duration-300 ... rounded-full 
                  hover:text-[#0a192f] hover:scale-110'>
                     <Link to='/' smooth={true} duration={500}>Home</Link>
                 </li>
-                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-emerald-400 duration-300 ... rounded-full
+                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-[#6DBBFA] duration-300 ... rounded-full
                  hover:text-[#0a192f] hover:scale-110'>
                     <Link to='/about' smooth={true} duration={500}>About</Link>
                 </li>
-                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-emerald-400 duration-300 ... rounded-full
+                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-[#6DBBFA] duration-300 ... rounded-full
                  hover:text-[#0a192f] hover:scale-110'>
                     <Link to='/skills' smooth={true} duration={500}>Skills</Link>
                 </li>
-                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-emerald-400 duration-300 ... rounded-full
+                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-[#6DBBFA] duration-300 ... rounded-full
                  hover:text-[#0a192f] hover:scale-110'> 
                     <Link to='/Projects' smooth={true} duration={500}>Projects</Link>
                 </li>
-                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-emerald-400 duration-300 ... rounded-full
+                <li className='transition ease-in-out delay-150 bg-[#0a192f] hover:-translate-y-1  hover:bg-[#6DBBFA] duration-300 ... rounded-full
                   hover:text-[#0a192f] hover:scale-110'>
                     <Link to='contact' smooth={true} duration={500}>Contact</Link>
                 </li>
