@@ -4,12 +4,12 @@ import {motion} from 'framer-motion'
 
 function Contact() {
     return (
-      <motion.section 
-      initial={{width:0}} 
-      animate={{width:"100%"}} 
-      exit={{x:"100%", transition:{duration:1}}}
-      name='contact' 
-      className='current-page w-full h-screen bg-[#0e2779] flex justify-center items-center p-4'>
+      <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }}
+      exit={{ opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
+      name='contact'
+      className='current-page w-full min-h-screen flex justify-center items-center p-4 py-24'>
 
         <form method='post' action="https://getform.io/f/c8bc4018-ec0f-41f6-9cde-1d8d84f60b56" className='flex flex-col max-w-[600px] w-full'>
           <div className='pd-8'>

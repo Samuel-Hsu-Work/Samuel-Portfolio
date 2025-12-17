@@ -9,10 +9,10 @@ import {motion} from 'framer-motion'
 
 function Projects() {
     return (
-        <motion.div 
-        initial={{width:0}} 
-        animate={{width:"100%"}} 
-        exit={{x:"100%", transition:{duration:1}}}
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }}
+        exit={{ opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
         name='Projects'
         className='current-page w-full min-h-screen py-24'>
 

@@ -5,10 +5,10 @@ import {motion} from 'framer-motion'
 const Skills = () => {
   
     return (
-        <motion.div 
-        initial={{width:0}} 
-        animate={{width:"100%"}} 
-        exit={{x:"100%", transition:{duration:1}}}
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }}
+        exit={{ opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
         name='skills'
         className='current-page w-full md:h-screen sm:text-center'>
 
