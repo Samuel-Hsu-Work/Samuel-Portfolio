@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {motion} from 'framer-motion'
 
 
@@ -9,8 +9,8 @@ const Skills = () => {
         initial={{width:0}} 
         animate={{width:"100%"}} 
         exit={{x:"100%", transition:{duration:1}}}
-        name='skills' 
-        className='current-page w-full md:h-screen bg-[#5379f5] sm:text-center'>
+        name='skills'
+        className='current-page w-full md:h-screen sm:text-center'>
 
             <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
                 <div className='pb-8'>
@@ -19,36 +19,36 @@ const Skills = () => {
   
                 <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8 text-2xl'>
 
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 hover:text-3xl  hover:font-bold'>
+                    <div className='shadow-md shadow-[#040c16] hover:scale-105 transition-all duration-300 ease-out'>
                         <p className='my-4 text-2xl sm:text-3xl h-12'>JavaScript</p>
                     </div>
 
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 hover:text-3xl  hover:font-bold'>
+                    <div className='shadow-md shadow-[#040c16] hover:scale-105 transition-all duration-300 ease-out'>
                         <p className='my-4 text-2xl sm:text-3xl h-12'>TypeScript</p>
                     </div>
 
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 hover:text-3xl   hover:font-bold'>
-                        <p className='my-4 text-2xl sm:text-3xl h-12'>React. JS</p>
+                    <div className='shadow-md shadow-[#040c16] hover:scale-105 transition-all duration-300 ease-out'>
+                        <p className='my-4 text-2xl sm:text-3xl h-12'>React</p>
                     </div>
 
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 hover:text-3xl   hover:font-bold'>
+                    <div className='shadow-md shadow-[#040c16] hover:scale-105 transition-all duration-300 ease-out'>
+                        <p className='my-4 text-2xl sm:text-3xl h-12'>Next.js</p>
+                    </div>
+
+                    <div className='shadow-md shadow-[#040c16] hover:scale-105 transition-all duration-300 ease-out'>
+                        <p className='my-4 text-2xl sm:text-3xl h-12'>Node.js</p>
+                    </div>
+
+                    <div className='shadow-md shadow-[#040c16] hover:scale-105 transition-all duration-300 ease-out'>
+                        <p className='my-4 text-2xl sm:text-3xl h-12'>MongoDB</p>
+                    </div>
+
+                    <div className='shadow-md shadow-[#040c16] hover:scale-105 transition-all duration-300 ease-out'>
                         <p className='my-4 text-2xl sm:text-3xl h-12'>Tailwind</p>
                     </div>
 
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 hover:text-3xl   hover:font-bold'>
-                        <p className='my-4 text-2xl sm:text-3xl h-12'>CSS</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 hover:text-3xl   hover:font-bold'>
-                        <p className='my-4 text-2xl sm:text-3xl h-12'>NODE JS</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 hover:text-3xl   hover:font-bold'>
-                        <p className='my-4 text-2xl sm:text-3xl h-12'>MangoDB</p>
-                    </div>
-
-                    <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500 hover:text-3xl   hover:font-bold'>
-                        <p className='my-4 text-2xl sm:text-3xl h-12'>MERN Stack</p>
+                    <div className='shadow-md shadow-[#040c16] hover:scale-105 transition-all duration-300 ease-out'>
+                        <p className='my-4 text-2xl sm:text-3xl h-12'>GCP</p>
                     </div>
                 </div>
             </div>

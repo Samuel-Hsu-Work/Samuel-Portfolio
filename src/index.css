@@ -16,7 +16,8 @@ html {
 body {
   font-family: sans-serif;
   line-height: 1.5;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 @media (max-width: 768px) {
@@ -117,6 +118,30 @@ body[data-theme="dark"] {
 
 .current-page {
   color: var(--text-color);
- 
+}
+
+/* Home photo card styles */
+.home-photo-card {
+  padding: 12px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+body[data-theme="light"] .home-photo-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="dark"] .home-photo-card {
+  background: rgba(26, 45, 74, 0.6);
+  border: 1px solid rgba(109, 187, 250, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.home-photo {
+  border-radius: 12px;
+  width: 100%;
+  display: block;
 }
 

@@ -45,40 +45,46 @@ const Home = () => {
     data-theme="light"
     >
       
-    <img
+    <div className='max-w-[1200px] mx-auto px-12 flex items-center justify-between h-full gap-20'>
+        {/* Text content */}
+        <div className='flex flex-col justify-center'>
+          <motion.h1
+            className="text-8xl font-bold mb-10 relative group cursor-pointer"
+            style={{ x: phrase1X, y: phrase1Y }}
+          >
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+              Samuel Hsu
+            </span>
+            <span className="absolute inset-0 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
+          </motion.h1>
+
+          <motion.p
+            className="text-3xl mb-12 relative group cursor-pointer"
+            style={{ x: phrase2X, y: phrase2Y }}
+          >
+            <span className="relative z-10">
+              A Full Stack Web Developer
+            </span>
+          </motion.p>
+
+          <motion.p
+            className="text-xl relative group cursor-pointer overflow-hidden"
+            style={{ x: phrase3X, y: phrase3Y }}
+          >
+            <span className="relative z-10 opacity-70">
+              Turning Ideas into Interactive Experiences
+            </span>
+          </motion.p>
+        </div>
+
+        {/* Photo card */}
+        <div className="home-photo-card w-[320px] flex-shrink-0">
+          <img
             src={Samuel}
             alt="Samuel Background"
-            className="absolute top-1/4 right-1/4 w-1/4 opacity-50"
+            className="home-photo"
           />
-
-      <div className='max-w-[1000px] mx-auto px-4 flex flex-col justify-center h-full'>        
-        <motion.h1 
-        className="text-8xl font-bold mb-12 relative group cursor-pointer"
-        style={{ x: phrase1X, y: phrase1Y }}
-        >
-          <span className="relative z-10 transition-colors duration-300 group-hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
-            Samuel Hsu
-          </span>
-          <span className="absolute inset-0 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-        </motion.h1>
-
-        <motion.p 
-        className="text-4xl mb-10 relative group cursor-pointer"
-        style={{ x: phrase2X, y: phrase2Y }}
-        >
-          <span className="relative z-10">
-            A Full Stack Web Developer
-          </span>
-        </motion.p>
-
-        <motion.p 
-        className="text-3xl relative group cursor-pointer overflow-hidden"
-        style={{ x: phrase3X, y: phrase3Y }}
-        >
-          <span className="relative z-10">
-            Turning Ideas into Interactive Experiences
-          </span>
-        </motion.p>
+        </div>
       </div>
     </motion.div>
  
