@@ -78,12 +78,18 @@ textarea {
 
 body[data-theme="light"] {
   --text-color: #000;
- 
+  --nav-text-color: #0a192f;
+  --nav-bg-color: #f0f0f0;
+  --nav-hover-bg: #6DBBFA;
+  --nav-hover-text: #0a192f;
 }
 
 body[data-theme="dark"] {
   --text-color: #fff;
- 
+  --nav-text-color: #6DBBFA;
+  --nav-bg-color: #0a192f;
+  --nav-hover-bg: #6DBBFA;
+  --nav-hover-text: #0a192f;
 }
 
 .current-page {

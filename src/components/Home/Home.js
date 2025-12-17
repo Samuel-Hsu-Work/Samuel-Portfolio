@@ -1,5 +1,5 @@
-import React, { useState, useEffect }  from 'react'
-import {motion, useMotionValue, useTransform, useAnimation} from 'framer-motion'
+import React, { useEffect }  from 'react'
+import {motion, useMotionValue, useTransform} from 'framer-motion'
 import './Home.css'
 import Samuel from './MyHead.jpg'
 
@@ -35,29 +35,7 @@ const Home = () => {
   }, [mouseX, mouseY]);
 
 
-  //photo floating
-  const randomControls = useAnimation();
-
-  useEffect(() => {
-    let isMounted = true; 
-    const animateRandom = async () => {
-      while (isMounted) {
-        await randomControls.start({
-          x: Math.random() * 200 - 100, 
-          y: Math.random() * 200 - 100,
-          transition: { duration: 2, ease: 'easeInOut' },
-        });
-      }
-    };
-    animateRandom();
-  
-    return () => {
-      isMounted = false;
-    };
-  }, [randomControls]);
-
-  
-  return (
+    return (
     <motion.div 
     initial={{width:0}} 
     animate={{width:"100%"}} 
@@ -67,11 +45,10 @@ const Home = () => {
     data-theme="light"
     >
       
-    <motion.img
+    <img
             src={Samuel}
             alt="Samuel Background"
-            className="absolute top-1/4 right-1/4 w-1/4  opacity-50"
-            animate={randomControls}
+            className="absolute top-1/4 right-1/4 w-1/4 opacity-50"
           />
 
       <div className='max-w-[1000px] mx-auto px-4 flex flex-col justify-center h-full'>        
@@ -89,20 +66,18 @@ const Home = () => {
         className="text-4xl mb-6 relative group cursor-pointer"
         style={{ x: phrase2X, y: phrase2Y }}
         >
-          <span className="relative z-10 transition-all duration-300 group-hover:text-blue-600 ">
+          <span className="relative z-10">
             A Full Stack Web Developer
           </span>
-          <span className="absolute bottom-0 left-0 w-4/12 h-0.5 bg-blue-300 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
         </motion.p>
 
         <motion.p 
         className="text-3xl relative group cursor-pointer overflow-hidden"
         style={{ x: phrase3X, y: phrase3Y }}
         >
-          <span className="relative z-10 transition-all duration-150  group-hover:text-blue-600">
+          <span className="relative z-10">
             Turning Ideas into Interactive Experiences
           </span>
-          <span className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 transform translate-y-full transition-transform duration-150 group-hover:translate-y-0 max-w-lg"></span>
         </motion.p>
       </div>
     </motion.div>

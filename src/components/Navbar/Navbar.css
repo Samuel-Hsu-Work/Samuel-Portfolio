@@ -27,7 +27,23 @@
     font-weight: 500;
     transition: all 0.3s ease;
   }
-  
-  
-  
-  
+
+/* Theme-aware navbar styles */
+.nav-menu {
+    color: var(--nav-text-color);
+}
+
+.nav-menu-item {
+    background-color: var(--nav-bg-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-menu-item:hover {
+    background-color: var(--nav-hover-bg);
+    color: var(--nav-hover-text);
+}
+
+.mobile-menu {
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
+}
