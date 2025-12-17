@@ -1,24 +1,21 @@
 {
   "files": {
-    "main.css": "/Samuel-Portfolio/static/css/main.e5d6357b.css",
-    "main.js": "/Samuel-Portfolio/static/js/main.7b88c99a.js",
-    "static/media/theme2.mkv": "/Samuel-Portfolio/static/media/theme2.e24566efebae76b5a7d2.mkv",
-    "static/media/theme.mkv": "/Samuel-Portfolio/static/media/theme.296d0bd6159b380c395b.mkv",
-    "static/media/Logo.webp": "/Samuel-Portfolio/static/media/Logo.99f16f124d7b796e6483.webp",
+    "main.css": "/Samuel-Portfolio/static/css/main.92e1a4bf.css",
+    "main.js": "/Samuel-Portfolio/static/js/main.1a296081.js",
     "static/media/Scheduler.jpg": "/Samuel-Portfolio/static/media/Scheduler.906cc77d7ec41916c742.jpg",
+    "static/media/Resume.pdf": "/Samuel-Portfolio/static/media/Resume.b005446706752d27ab10.pdf",
     "static/media/PasswordGenerate.jpg": "/Samuel-Portfolio/static/media/PasswordGenerate.c4eb6122df097b00ca8d.jpg",
     "static/media/PopQuiz.jpg": "/Samuel-Portfolio/static/media/PopQuiz.de9c5dcaa1e865d64388.jpg",
-    "static/media/Resume.pdf": "/Samuel-Portfolio/static/media/Resume.fcb61f968e97c95e8c4f.pdf",
     "static/media/MusicPage.png": "/Samuel-Portfolio/static/media/MusicPage.9a08e133b9618b5efef7.png",
     "static/media/MyHead.jpg": "/Samuel-Portfolio/static/media/MyHead.9b77ce87cf4033075bc0.jpg",
-    "static/media/Sun.svg": "/Samuel-Portfolio/static/media/Sun.681607dcda2a01539a9a8a157ae74e6e.svg",
-    "static/media/Moon.svg": "/Samuel-Portfolio/static/media/Moon.0a6a2b75ac51157455302ddcfca385c0.svg",
+    "static/media/Sun.svg": "/Samuel-Portfolio/static/media/Sun.aef8f60b836976321d24aa4163dbfb7f.svg",
+    "static/media/Moon.svg": "/Samuel-Portfolio/static/media/Moon.af99a536ce1d19f741275b8554beaa63.svg",
     "index.html": "/Samuel-Portfolio/index.html",
-    "main.e5d6357b.css.map": "/Samuel-Portfolio/static/css/main.e5d6357b.css.map",
-    "main.7b88c99a.js.map": "/Samuel-Portfolio/static/js/main.7b88c99a.js.map"
+    "main.92e1a4bf.css.map": "/Samuel-Portfolio/static/css/main.92e1a4bf.css.map",
+    "main.1a296081.js.map": "/Samuel-Portfolio/static/js/main.1a296081.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5d6357b.css",
-    "static/js/main.7b88c99a.js"
+    "static/css/main.92e1a4bf.css",
+    "static/js/main.1a296081.js"
   ]
 }
