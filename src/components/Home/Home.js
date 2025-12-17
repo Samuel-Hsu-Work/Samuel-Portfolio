@@ -53,7 +53,7 @@ const Home = () => {
 
       <div className='max-w-[1000px] mx-auto px-4 flex flex-col justify-center h-full'>        
         <motion.h1 
-        className="text-8xl font-bold mb-8 relative group cursor-pointer"
+        className="text-8xl font-bold mb-12 relative group cursor-pointer"
         style={{ x: phrase1X, y: phrase1Y }}
         >
           <span className="relative z-10 transition-colors duration-300 group-hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ">
@@ -63,7 +63,7 @@ const Home = () => {
         </motion.h1>
 
         <motion.p 
-        className="text-4xl mb-6 relative group cursor-pointer"
+        className="text-4xl mb-10 relative group cursor-pointer"
         style={{ x: phrase2X, y: phrase2Y }}
         >
           <span className="relative z-10">
