@@ -1,0 +1,104 @@
+/* Section titles */
+.about-section-title {
+    color: var(--accent-color);
+}
+
+.about-subtitle {
+    opacity: 0.6;
+}
+
+.about-tagline {
+    opacity: 0.7;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cards */
+body[data-theme="light"] .about-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+body[data-theme="dark"] .about-card {
+    background: rgba(26, 45, 74, 0.5);
+    border: 1px solid rgba(109, 187, 250, 0.12);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill tags */
+body[data-theme="light"] .about-tag {
+    background: rgba(124, 58, 237, 0.1);
+    color: #6d28d9;
+}
+
+body[data-theme="dark"] .about-tag {
+    background: rgba(167, 139, 250, 0.15);
+    color: #c4b5fd;
+}
+
+/* Category labels */
+body[data-theme="light"] .about-category-label {
+    color: #64748b;
+}
+
+body[data-theme="dark"] .about-category-label {
+    color: #94a3b8;
+}
+
+/* Experience */
+body[data-theme="light"] .about-company {
+    color: #7c3aed;
+}
+
+body[data-theme="dark"] .about-company {
+    color: #a78bfa;
+}
+
+.about-type {
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+body[data-theme="light"] .about-period {
+    color: #64748b;
+}
+
+body[data-theme="dark"] .about-period {
+    color: #94a3b8;
+}
+
+body[data-theme="light"] .about-highlight {
+    color: #374151;
+}
+
+body[data-theme="dark"] .about-highlight {
+    color: #cbd5e1;
+}
+
+.about-bullet {
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+/* Project descriptions */
+body[data-theme="light"] .about-desc {
+    color: #64748b;
+}
+
+body[data-theme="dark"] .about-desc {
+    color: #94a3b8;
+}
+
+/* Stack tags */
+body[data-theme="light"] .about-stack-tag {
+    background: rgba(0, 0, 0, 0.06);
+    color: #475569;
+}
+
+body[data-theme="dark"] .about-stack-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+}

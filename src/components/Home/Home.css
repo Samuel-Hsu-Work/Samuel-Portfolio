@@ -1,0 +1,64 @@
+/* Floating animation for photo card */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.home-photo-card {
+  animation: float 4s ease-in-out infinite;
+  position: relative;
+}
+
+/* Status badge */
+.home-status-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+/* Greeting accent color */
+.home-greeting {
+  color: var(--accent-color, #8b5cf6);
+}
+
+/* CTA Buttons */
+.home-cta-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.home-cta-secondary {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Offset for fixed navbar so content centers in remaining space */
+.home-container {
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding-top: 4rem;
+    gap: 2rem;
+  }
+}

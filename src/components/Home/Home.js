@@ -1,7 +1,8 @@
 import React, { useEffect }  from 'react'
 import {motion, useMotionValue, useTransform} from 'framer-motion'
+import { Link } from 'react-router-dom'
 import './Home.css'
-import Samuel from './MyHead.jpg'
+import Samuel from './MyHead.png'
 
 const Home = () => {
 
@@ -9,14 +10,14 @@ const Home = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const phrase1X = useTransform(mouseX, (value) => value * 0.01);
-  const phrase1Y = useTransform(mouseY, (value) => value * 0.01);
+  const phrase1X = useTransform(mouseX, (value) => value * 0.005);
+  const phrase1Y = useTransform(mouseY, (value) => value * 0.005);
 
-  const phrase2X = useTransform(phrase1X, (value) => -value * 5); 
-  const phrase2Y = useTransform(phrase1Y, (value) => -value * 5);
+  const phrase2X = useTransform(mouseX, (value) => value * -0.008);
+  const phrase2Y = useTransform(mouseY, (value) => value * -0.008);
 
-  const phrase3X = useTransform(mouseX, (value) => value * 0.08);
-  const phrase3Y = useTransform(mouseY, (value) => value * 0.08);
+  const phrase3X = useTransform(mouseX, (value) => value * 0.012);
+  const phrase3Y = useTransform(mouseY, (value) => value * 0.012);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -44,50 +45,85 @@ const Home = () => {
     className='current-page relative w-full h-screen bg-[center_top_9rem]'
     data-theme="light"
     >
-      
-    <div className='max-w-[1200px] mx-auto px-12 flex items-center justify-between h-full gap-20'>
-        {/* Text content */}
-        <div className='flex flex-col justify-center'>
-          <motion.h1
-            className="text-8xl font-bold mb-10 relative group cursor-pointer"
-            style={{ x: phrase1X, y: phrase1Y }}
-          >
-            <span className="relative z-10 transition-colors duration-300 group-hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-              Samuel Hsu
-            </span>
-            <span className="absolute inset-0 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100"></span>
-          </motion.h1>
 
-          <motion.p
-            className="text-3xl mb-12 relative group cursor-pointer"
-            style={{ x: phrase2X, y: phrase2Y }}
-          >
-            <span className="relative z-10">
-              A Full Stack Web Developer
-            </span>
-          </motion.p>
+    <div className='home-container max-w-[1200px] mx-auto px-8 md:px-12 flex flex-col-reverse md:flex-row items-center justify-between h-full gap-10 md:gap-20'>
+      {/* Text content */}
+      <div className='flex flex-col justify-center items-center md:items-start text-center md:text-left'>
+        <motion.p
+          className="home-greeting text-lg md:text-xl font-medium mb-2 tracking-wide"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          Hi there, I'm
+        </motion.p>
 
-          <motion.p
-            className="text-xl relative group cursor-pointer overflow-hidden"
-            style={{ x: phrase3X, y: phrase3Y }}
-          >
-            <span className="relative z-10 opacity-70">
-              Turning Ideas into Interactive Experiences
-            </span>
-          </motion.p>
-        </div>
+        <motion.h1
+          className="text-5xl md:text-8xl font-bold mb-4 md:mb-6"
+          style={{ x: phrase1X, y: phrase1Y }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+            Samuel Hsu
+          </span>
+        </motion.h1>
 
-        {/* Photo card */}
-        <div className="home-photo-card w-[320px] flex-shrink-0">
-          <img
-            src={Samuel}
-            alt="Samuel Background"
-            className="home-photo"
-          />
-        </div>
+        <motion.p
+          className="home-subtitle text-xl md:text-3xl font-semibold mb-4 md:mb-6"
+          style={{ x: phrase2X, y: phrase2Y }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          A Full Stack Web Developer
+        </motion.p>
+
+        <motion.p
+          className="home-tagline text-base md:text-xl mb-8 md:mb-10"
+          style={{ x: phrase3X, y: phrase3Y }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          Turning Ideas into Interactive Experiences
+        </motion.p>
+
+        <motion.div
+          className="flex flex-wrap gap-4 justify-center md:justify-start"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          <Link to="/Projects" className="home-cta-primary">
+            View My Work
+          </Link>
+          <Link to="/contact" className="home-cta-secondary">
+            Get in Touch
+          </Link>
+        </motion.div>
       </div>
+
+      {/* Photo card */}
+      <motion.div
+        className="home-photo-card w-[200px] md:w-[320px] flex-shrink-0"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+      >
+        <div className="home-status-badge">
+          Open to Work
+        </div>
+        <img
+          src={Samuel}
+          alt="Samuel Hsu"
+          className="home-photo"
+        />
+      </motion.div>
+    </div>
     </motion.div>
- 
+
   )
 }
 

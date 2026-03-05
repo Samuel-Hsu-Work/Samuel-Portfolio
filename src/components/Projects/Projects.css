@@ -1,0 +1,96 @@
+/* Project cards */
+body[data-theme="light"] .project-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body[data-theme="light"] .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+body[data-theme="dark"] .project-card {
+    background: rgba(26, 45, 74, 0.5);
+    border: 1px solid rgba(109, 187, 250, 0.12);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body[data-theme="dark"] .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Image */
+.project-image-wrapper {
+    overflow: hidden;
+}
+
+.project-image-wrapper img {
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Description */
+body[data-theme="light"] .project-desc {
+    color: #64748b;
+}
+
+body[data-theme="dark"] .project-desc {
+    color: #94a3b8;
+}
+
+/* Stack tags */
+body[data-theme="light"] .project-tag {
+    background: rgba(0, 0, 0, 0.06);
+    color: #475569;
+}
+
+body[data-theme="dark"] .project-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+}
+
+/* Buttons */
+body[data-theme="light"] .project-btn {
+    background: rgba(0, 0, 0, 0.06);
+    color: #374151;
+}
+
+body[data-theme="light"] .project-btn:hover {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+body[data-theme="dark"] .project-btn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+}
+
+body[data-theme="dark"] .project-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+body[data-theme="light"] .project-btn-primary {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    color: #fff;
+}
+
+body[data-theme="light"] .project-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+}
+
+body[data-theme="dark"] .project-btn-primary {
+    background: linear-gradient(135deg, #a78bfa, #f472b6);
+    color: #0a192f;
+}
+
+body[data-theme="dark"] .project-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.35);
+}
