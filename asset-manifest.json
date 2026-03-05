@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/Samuel-Portfolio/static/css/main.92e1a4bf.css",
-    "main.js": "/Samuel-Portfolio/static/js/main.1a296081.js",
+    "main.css": "/Samuel-Portfolio/static/css/main.c6ccfe34.css",
+    "main.js": "/Samuel-Portfolio/static/js/main.2e76ea91.js",
+    "static/media/MyHead.png": "/Samuel-Portfolio/static/media/MyHead.f957e8a702a5d00afe2a.png",
     "static/media/Scheduler.jpg": "/Samuel-Portfolio/static/media/Scheduler.906cc77d7ec41916c742.jpg",
     "static/media/Resume.pdf": "/Samuel-Portfolio/static/media/Resume.b005446706752d27ab10.pdf",
-    "static/media/PasswordGenerate.jpg": "/Samuel-Portfolio/static/media/PasswordGenerate.c4eb6122df097b00ca8d.jpg",
     "static/media/PopQuiz.jpg": "/Samuel-Portfolio/static/media/PopQuiz.de9c5dcaa1e865d64388.jpg",
     "static/media/MusicPage.png": "/Samuel-Portfolio/static/media/MusicPage.9a08e133b9618b5efef7.png",
-    "static/media/MyHead.jpg": "/Samuel-Portfolio/static/media/MyHead.9b77ce87cf4033075bc0.jpg",
     "static/media/Sun.svg": "/Samuel-Portfolio/static/media/Sun.aef8f60b836976321d24aa4163dbfb7f.svg",
-    "static/media/Moon.svg": "/Samuel-Portfolio/static/media/Moon.af99a536ce1d19f741275b8554beaa63.svg",
     "index.html": "/Samuel-Portfolio/index.html",
-    "main.92e1a4bf.css.map": "/Samuel-Portfolio/static/css/main.92e1a4bf.css.map",
-    "main.1a296081.js.map": "/Samuel-Portfolio/static/js/main.1a296081.js.map"
+    "static/media/Moon.svg": "/Samuel-Portfolio/static/media/Moon.af99a536ce1d19f741275b8554beaa63.svg",
+    "main.c6ccfe34.css.map": "/Samuel-Portfolio/static/css/main.c6ccfe34.css.map",
+    "main.2e76ea91.js.map": "/Samuel-Portfolio/static/js/main.2e76ea91.js.map"
   },
   "entrypoints": [
-    "static/css/main.92e1a4bf.css",
-    "static/js/main.1a296081.js"
+    "static/css/main.c6ccfe34.css",
+    "static/js/main.2e76ea91.js"
   ]
 }
