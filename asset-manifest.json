@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Samuel-Portfolio/static/css/main.c6ccfe34.css",
-    "main.js": "/Samuel-Portfolio/static/js/main.2e76ea91.js",
+    "main.css": "/Samuel-Portfolio/static/css/main.384c600b.css",
+    "main.js": "/Samuel-Portfolio/static/js/main.b39c50bc.js",
+    "static/media/MusicPage.png": "/Samuel-Portfolio/static/media/MusicPage.60a82db296c0b5405d3a.png",
     "static/media/MyHead.png": "/Samuel-Portfolio/static/media/MyHead.f957e8a702a5d00afe2a.png",
     "static/media/Scheduler.jpg": "/Samuel-Portfolio/static/media/Scheduler.906cc77d7ec41916c742.jpg",
-    "static/media/Resume.pdf": "/Samuel-Portfolio/static/media/Resume.b005446706752d27ab10.pdf",
-    "static/media/PopQuiz.jpg": "/Samuel-Portfolio/static/media/PopQuiz.de9c5dcaa1e865d64388.jpg",
-    "static/media/MusicPage.png": "/Samuel-Portfolio/static/media/MusicPage.9a08e133b9618b5efef7.png",
+    "static/media/Resume.pdf": "/Samuel-Portfolio/static/media/Resume.5843de0f107a145280a6.pdf",
+    "static/media/QAreport.png": "/Samuel-Portfolio/static/media/QAreport.641214b1451fa9951366.png",
     "static/media/Sun.svg": "/Samuel-Portfolio/static/media/Sun.aef8f60b836976321d24aa4163dbfb7f.svg",
     "index.html": "/Samuel-Portfolio/index.html",
     "static/media/Moon.svg": "/Samuel-Portfolio/static/media/Moon.af99a536ce1d19f741275b8554beaa63.svg",
-    "main.c6ccfe34.css.map": "/Samuel-Portfolio/static/css/main.c6ccfe34.css.map",
-    "main.2e76ea91.js.map": "/Samuel-Portfolio/static/js/main.2e76ea91.js.map"
+    "main.384c600b.css.map": "/Samuel-Portfolio/static/css/main.384c600b.css.map",
+    "main.b39c50bc.js.map": "/Samuel-Portfolio/static/js/main.b39c50bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6ccfe34.css",
-    "static/js/main.2e76ea91.js"
+    "static/css/main.384c600b.css",
+    "static/js/main.b39c50bc.js"
   ]
 }
