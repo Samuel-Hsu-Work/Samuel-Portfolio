@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
 import MusicPage from "./MusicPage.png";
-import PopQuiz from "./PopQuiz.jpg";
+import QAreport from "./QAreport.png";
 import Scheduler from "./Scheduler.jpg";
 
 const fadeUp = {
@@ -20,23 +20,20 @@ const projects = [
         description: "A music community platform with forum features. Leverages Next.js server and client components for SEO and dynamic UI, with a Python background worker automating daily AI-generated music-theory discussions.",
         image: MusicPage,
         stack: ["TypeScript", "React", "Next.js", "Python", "PostgreSQL", "OpenAI API"],
-        github: "https://github.com/sky19930112/MusicTheory",
-        demo: "https://sky19930112.github.io/MusicTheory/",
+        demo: "https://music-talks-bqvzf5t30-samuelhsuwork-gmailcoms-projects.vercel.app/",
     },
     {
-        name: "Easy Poppy Quizzy",
-        description: "A simple and interactive pop quiz app for coding fundamentals. Test your knowledge with timed questions and instant feedback.",
-        image: PopQuiz,
-        stack: ["JavaScript", "HTML", "CSS"],
-        github: "https://github.com/sky19930112/popQuizzes",
-        demo: "https://sky19930112.github.io/popQuizzes/",
+        name: "QAreport",
+        description: "An internal QA reporting tool built to improve testing efficiency at Tristyn Tech. Allows testers to upload screen recordings and bug descriptions, helping developers diagnose issues that are difficult to reproduce.",
+        image: QAreport,
+        stack: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Google Cloud Platform"],
+        demo: "https://qa-report.vercel.app/",
     },
     {
         name: "Daily Scheduler",
         description: "A day planner that uses local storage to persist your schedule across sessions. Organize your workday hour by hour.",
         image: Scheduler,
         stack: ["JavaScript", "HTML", "CSS", "LocalStorage"],
-        github: "https://github.com/sky19930112/DailyScheduler",
         demo: "https://sky19930112.github.io/DailyScheduler/",
     },
 ];
@@ -73,11 +70,11 @@ function Projects() {
                         >
                             <div className='flex flex-col md:flex-row'>
                                 {/* Image */}
-                                <div className='project-image-wrapper md:w-2/5 flex-shrink-0'>
+                                <div className='project-image-wrapper md:w-2/5 flex-shrink-0 h-52 md:h-auto bg-black/30'>
                                     <img
                                         src={project.image}
                                         alt={project.name}
-                                        className='w-full h-48 md:h-full object-cover'
+                                        className='w-full h-full object-contain'
                                     />
                                 </div>
 
@@ -93,9 +90,6 @@ function Projects() {
                                         </div>
                                     </div>
                                     <div className='flex gap-3'>
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className='project-btn flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300'>
-                                            <FaGithub size={16} /> Code
-                                        </a>
                                         {project.demo && (
                                             <a href={project.demo} target="_blank" rel="noopener noreferrer" className='project-btn-primary flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300'>
                                                 <FaExternalLinkAlt size={14} /> Live Demo
