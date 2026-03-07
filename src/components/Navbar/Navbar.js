@@ -4,6 +4,7 @@ import {FaBars, FaTimes, FaGithub, FaLinkedin} from 'react-icons/fa'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 import './Navbar.css';
 import DarkMode from '../DarkMode/DarkMode.js';
+import ResumePDF from './Resume.pdf';
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -67,7 +68,7 @@ const Navbar = () => {
                     <a className='nav-social-icon' href="https://github.com/Samuel-Hsu-Work" aria-label="GitHub">
                         <FaGithub size={24} />
                     </a>
-                    <a className='nav-social-icon' href={require("./Resume.pdf")} aria-label="Resume">
+                    <a className='nav-social-icon' href={ResumePDF} target="_blank" rel="noopener noreferrer" aria-label="Resume">
                         <BsFillPersonLinesFill size={24} />
                     </a>
                 </li>
@@ -88,7 +89,7 @@ const Navbar = () => {
                     </a>
                 </li>
                 <li className='slide-link w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 rounded-r-full'>
-                    <a className='flex justify-between items-center w-full text-gray-50 px-4' href={require("./Resume.pdf")}>
+                    <a className='flex justify-between items-center w-full text-gray-50 px-4' href={ResumePDF} target="_blank" rel="noopener noreferrer">
                         Resume <BsFillPersonLinesFill size={30} />
                     </a>
                 </li>
