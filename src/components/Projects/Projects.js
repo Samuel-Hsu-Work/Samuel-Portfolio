@@ -3,7 +3,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
 import MusicPage from "./MusicPage.png";
 import QAreport from "./QAreport.png";
-import Scheduler from "./Scheduler.jpg";
+import AICalendarAssistant from "./AICalendarAssistant.png";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 20 },
@@ -30,11 +30,11 @@ const projects = [
         demo: "https://qa-report.vercel.app/",
     },
     {
-        name: "Daily Scheduler",
-        description: "A day planner that uses local storage to persist your schedule across sessions. Organize your workday hour by hour.",
-        image: Scheduler,
-        stack: ["JavaScript", "HTML", "CSS", "LocalStorage"],
-        demo: "https://sky19930112.github.io/DailyScheduler/",
+        name: "AI Calendar Assistant",
+        description: "An AI-powered calendar assistant that lets you schedule, move, and delete events through natural language chat. Features a visible agent pipeline for intent detection, validation, and CRUD execution against a live calendar view.",
+        image: AICalendarAssistant,
+        stack: ["TypeScript", "React", "OpenAI API"],
+        demo: "https://ai-scheduling-assistant-theta.vercel.app/",
     },
 ];
 
