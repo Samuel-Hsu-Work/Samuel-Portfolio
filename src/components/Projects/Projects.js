@@ -20,7 +20,7 @@ const projects = [
         description: "A music community platform with forum features. Leverages Next.js server and client components for SEO and dynamic UI, with a Python background worker automating daily AI-generated music-theory discussions.",
         image: MusicPage,
         stack: ["TypeScript", "React", "Next.js", "Python", "PostgreSQL", "OpenAI API"],
-        demo: "https://music-talks-bqvzf5t30-samuelhsuwork-gmailcoms-projects.vercel.app/",
+        demo: "https://musician-community-platform.vercel.app/",
     },
     {
         name: "QAreport",
