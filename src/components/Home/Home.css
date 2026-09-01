@@ -1,11 +1,7 @@
-/* Floating animation for photo card */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
 .home-photo-card {
-  animation: float 4s ease-in-out infinite;
+  /* Previously had an infinite CSS float animation — removed: auto-starting,
+     indefinite motion with no pause control fails WCAG SC 2.2.2 regardless
+     of the user's reduced-motion preference. */
   position: relative;
 }
 

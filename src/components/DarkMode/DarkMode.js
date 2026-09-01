@@ -11,13 +11,15 @@ const DarkMode = () => {
           <input
             className='dark_mode_input'
             type='checkbox'
+            role='switch'
             id='darkmode-toggle'
             onChange={toggleTheme}
-            checked={isDarkMode} 
+            checked={isDarkMode}
+            aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           />
           <label className='dark_mode_label' htmlFor='darkmode-toggle'>
-            <Sun />
-            <Moon />
+            <Sun aria-hidden="true" focusable="false" />
+            <Moon aria-hidden="true" focusable="false" />
           </label>
         </div>
       );

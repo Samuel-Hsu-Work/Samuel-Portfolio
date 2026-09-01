@@ -1,14 +1,12 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import './About.css';
 
-const fadeUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-        opacity: 1,
-        y: 0,
-        transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" }
-    })
-};
+const fadeUp = (reduced) => ({
+    hidden: reduced ? { opacity: 1 } : { opacity: 0, y: 20 },
+    visible: (i) => reduced
+        ? { opacity: 1, transition: { duration: 0.01 } }
+        : { opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" } }
+});
 
 const skills = [
     { category: "Languages", items: ["JavaScript", "TypeScript", "Python"] },
@@ -65,19 +63,22 @@ const projects = [
 ];
 
 const About = () => {
+    const reduced = useReducedMotion();
+    const variants = fadeUp(reduced);
+
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }}
-            exit={{ opacity: 0, transition: { duration: 0.3, ease: "easeIn" } }}
+            initial={reduced ? { opacity: 1 } : { opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: reduced ? 0.01 : 0.5, ease: "easeOut" } }}
+            exit={{ opacity: 0, transition: { duration: reduced ? 0.01 : 0.3, ease: "easeIn" } }}
             name='about'
             className='current-page w-full min-h-screen py-24 overflow-y-auto'
         >
             <div className='max-w-[900px] mx-auto px-6 md:px-8'>
                 {/* Header */}
-                <motion.div className='text-center mb-12' custom={0} variants={fadeUp} initial="hidden" animate="visible">
-                    <h1 className='text-5xl md:text-6xl font-bold mb-2'>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+                <motion.div className='text-center mb-12' custom={0} variants={variants} initial="hidden" animate="visible">
+                    <h1 tabIndex={-1} className='text-5xl md:text-6xl font-bold mb-2'>
+                        <span className="gradient-heading">
                             Samuel Hsu
                         </span>
                     </h1>
@@ -88,7 +89,7 @@ const About = () => {
                 </motion.div>
 
                 {/* Skills */}
-                <motion.section className='mb-10' custom={1} variants={fadeUp} initial="hidden" animate="visible">
+                <motion.section className='mb-10' custom={1} variants={variants} initial="hidden" animate="visible">
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Skills</h2>
                     <div className='about-card rounded-xl p-6'>
                         <div className='flex flex-wrap gap-y-4'>
@@ -107,7 +108,7 @@ const About = () => {
                 </motion.section>
 
                 {/* Experience */}
-                <motion.section className='mb-10' custom={2} variants={fadeUp} initial="hidden" animate="visible">
+                <motion.section className='mb-10' custom={2} variants={variants} initial="hidden" animate="visible">
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Experience</h2>
                     <div className='flex flex-col gap-4'>
                         {experience.map((job) => (
@@ -131,7 +132,7 @@ const About = () => {
                 </motion.section>
 
                 {/* Projects */}
-                <motion.section className='mb-10' custom={3} variants={fadeUp} initial="hidden" animate="visible">
+                <motion.section className='mb-10' custom={3} variants={variants} initial="hidden" animate="visible">
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Projects</h2>
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                         {projects.map((project) => (
@@ -149,7 +150,7 @@ const About = () => {
                 </motion.section>
 
                 {/* Certification */}
-                <motion.section className='mb-10' custom={4} variants={fadeUp} initial="hidden" animate="visible">
+                <motion.section className='mb-10' custom={4} variants={variants} initial="hidden" animate="visible">
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Certification</h2>
                     <div className='about-card rounded-xl p-6'>
                         <h3 className='text-lg font-bold'>Full Stack Web Development Bootcamp</h3>
