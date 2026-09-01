@@ -6,3 +6,6 @@
 
 # Claude Code scratch plans
 /.claude/plans
+
+# Claude Code local permission settings (machine/session-specific)
+/.claude/settings.json
