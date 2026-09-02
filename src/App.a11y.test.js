@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from './components/ThemeContext/ThemeContext.js';
-import { AppShell } from './App.js';
+import App, { AppShell } from './App.js';
 import DarkMode from './components/DarkMode/DarkMode.js';
 import Contact from './components/Contacts/Contact.js';
 import Projects from './components/Projects/Projects.js';
@@ -77,6 +77,24 @@ test('a trailing slash in the URL still resolves the route title and active nav 
   renderShell('/about/');
   await waitFor(() => expect(document.title).toBe('About | Samuel Hsu'));
   expect(screen.getAllByRole('link', { name: 'About' })[0]).toHaveAttribute('aria-current', 'page');
+});
+
+test('a direct load on a route under the deployed subpath is not redirected home', () => {
+  const originalPublicUrl = process.env.PUBLIC_URL;
+  process.env.PUBLIC_URL = '/Samuel-Portfolio';
+  window.history.pushState({}, '', '/Samuel-Portfolio/About');
+
+  render(
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+
+  expect(window.location.pathname).toBe('/Samuel-Portfolio/About');
+  expect(screen.getByText('Austin, TX')).toBeInTheDocument();
+
+  process.env.PUBLIC_URL = originalPublicUrl;
+  window.history.pushState({}, '', '/');
 });
 
 test('mobile menu toggle button reflects expanded state and controls the dialog', async () => {

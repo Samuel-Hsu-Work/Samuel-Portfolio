@@ -23,7 +23,7 @@ export function AppShell() {
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <AppShell />
     </Router>
   )

@@ -6,7 +6,7 @@ Working state that isn't visible from the code alone — what's in progress, wha
 
 ## Status (last updated: 2026-09-02)
 
-- `main` is clean and fully in sync with `origin/main` (0 ahead/behind) — nothing uncommitted, nothing mid-flight. Tests (19/19) and `CI=true npm run build` verified green, then `npm run deploy` published the current `build/` to GitHub Pages (`gh-pages -d build` → "Published").
+- `main`'s last pushed/deployed commit is `6929b8a`. On top of that, the Router-`basename` fix (see below) is implemented and Codex-reviewed clean, but **not yet committed** — `src/App.js`, `src/App.a11y.test.js`, `package.json` are uncommitted in the working tree, pending the user's go-ahead to commit/push/redeploy.
 
 ## In progress
 
@@ -15,7 +15,7 @@ Working state that isn't visible from the code alone — what's in progress, wha
 ## Next up / backlog
 
 - **Manual verification** of the WCAG remediation — keyboard-only pass, screen reader (VoiceOver), 200%/400% zoom, mobile widths. Deliberately left to the user rather than automated.
-- **Router has no `basename`** (`src/App.js`): found while running the app live — client-side nav drops the `/Samuel-Portfolio` prefix from the URL, and (confirmed via the `*` → `Navigate to="/"` catch-all route) a direct/refreshed link to a non-home route on the deployed GitHub Pages site silently redirects to Home instead of loading that page. Fix: `<Router basename={process.env.PUBLIC_URL}>`. Not yet actioned.
+- **Commit, push, and redeploy** the Router-`basename` + GitHub Pages 404 fallback fix (see Recently done) once the user gives the go-ahead.
 - **No CI automation**: found via `/audit`. No `.github/workflows`; `npm run build` only enforces the documented `CI=true` jsx-a11y-as-error gate when that env var happens to be set, and `npm test` never runs as part of the deploy flow at all. Suggested: a minimal GitHub Actions workflow running `CI=true npm test -- --watchAll=false` and `CI=true npm run build` on push to `main`.
 - `About.js`'s own `projects` array is stale vs. `Projects.js` (missing the "AI Calendar Assistant" entry) — flagged during this session's resume sync, not resume-related, not yet fixed.
 - Deferred from Codex's second review of the a11y work: the mobile menu's no-`<dialog>`-support fallback (pre-2022 Safari) only toggles the `open` attribute — no focus trap / Escape like `showModal()` gives. Accepted as a documented limitation given how small that browser range is for this site; revisit with a real dialog polyfill if that judgment call should change.
@@ -23,6 +23,7 @@ Working state that isn't visible from the code alone — what's in progress, wha
 
 ## Recently done
 
+- 2026-09-02 — Fixed the Router `basename` bug: added `basename={process.env.PUBLIC_URL}` to `src/App.js`'s `<Router>` so client-side nav keeps the `/Samuel-Portfolio` prefix, plus a `build/404.html` GitHub Pages SPA-fallback (`predeploy` now runs `cp build/index.html build/404.html`) so a direct load/refresh of a nested route no longer 404s before the app ever boots — Codex's first review caught that the `basename` fix alone didn't cover that server-side 404 case. Added a regression test (`src/App.a11y.test.js`) mounting the real `App` (not just `AppShell`) to assert a deep-linked path isn't redirected home. Scoped via `/scope`, reviewed twice by Codex (first pass: P1 finding on the missing 404 fallback, addressed; second pass clean). Tests pass (20/20), `CI=true npm run build` clean. Not yet committed.
 - 2026-09-02 — Shipped and deployed the current `main` (`6929b8a`) to GitHub Pages: tests (19/19) and `CI=true npm run build` verified green, `npm run deploy` published successfully. No uncommitted work and no unpushed commits at the time, so nothing new went through Codex review this pass.
 - 2026-09-01 — Made all pages and shared components responsive from 320px to desktop (Tailwind utilities across Home/About/Projects/Contact, hardened mobile dialog, hero breakpoint fix). Scoped via `/scope`, reviewed twice by Codex (first pass flagged an xl-breakpoint regression, addressed; second pass clean). Tests pass (19/19). Committed and pushed as `6929b8a`.
 - 2026-09-01 — Replaced the resume PDF and synced `About.js`'s experience/skills/certification content with it, plus added a new Education section that didn't exist before. Scoped via `/scope` (Explore agent diffed resume vs. page, ambiguous content calls resolved with the user), reviewed by Codex (clean, no findings), tests pass (18/18). Committed as `40e06ea`, not yet pushed.
