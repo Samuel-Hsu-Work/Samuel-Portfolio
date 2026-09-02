@@ -9,22 +9,31 @@ const fadeUp = (reduced) => ({
 });
 
 const skills = [
-    { category: "Languages", items: ["JavaScript", "TypeScript", "Python"] },
-    { category: "Frontend", items: ["React", "React Native", "Next.js", "HTML", "CSS", "Tailwind"] },
-    { category: "Backend", items: ["Node.js", "Express"] },
+    { category: "Languages", items: ["JavaScript", "TypeScript", "Python", "Java"] },
+    { category: "Frontend", items: ["React", "React Native", "Next.js", "Angular", "HTML", "CSS", "Tailwind", "Bootstrap"] },
+    { category: "Backend", items: ["Node.js", "Express", "Spring", "RESTful API", "FastAPI"] },
     { category: "Databases", items: ["PostgreSQL", "MongoDB", "MySQL", "Firebase"] },
     { category: "Monitoring", items: ["Sentry", "Better Stack"] },
+    { category: "Others", items: ["Git", "Agile", "AWS"] },
+    { category: "Interest", items: ["Piano", "Guitar", "Woodworking", "Cardistry"] },
+];
+
+const education = [
+    { school: "Texas State University", degree: "Bachelor of Music in Jazz Studies" },
 ];
 
 const experience = [
     {
-        role: "Mobile App Developer",
+        role: "Software Engineer",
         company: "Wisent",
         period: "Oct 2025 - Present",
         type: "Early-Stage Startup",
         highlights: [
-            "Built data translation layer decoupling frontend from backend schemas",
-            "Integrated OpenAI & Gemini APIs with provider abstraction and auto-fallback",
+            "Developed AI-powered chat and agent capabilities across frontend and backend services by integrating 3+ LLM providers (OpenAI, Google Gemini, OpenRouter) with model routing, fallback handling, evaluation workflows, and structured prompt orchestration",
+            "Built a frontend data translation layer mapping backend API responses to stable UI models, minimizing frontend changes when backend schemas evolved",
+            "Replaced brittle text-pattern matching of LLM responses with structured intent tags, enabling deterministic application logic despite output drift across models and providers",
+            "Designed a UTC-based timestamp strategy with timezone-aware conversion to resolve cross-timezone reliability risks",
+            "Designed and built a QA framework across mobile, backend, and AI services, defining 35+ risk-based testing capabilities and 200+ deterministic invariants that uncovered 11 confirmed production defects",
         ],
     },
     {
@@ -33,9 +42,9 @@ const experience = [
         period: "Mar 2025 - Aug 2025",
         type: "Contract",
         highlights: [
-            "Developed features with React in Agile team, integrating REST APIs",
-            "Implemented React Context for global state, reducing prop drilling",
-            "Enhanced accessibility with WCAG-compliant tab navigation and screen-reader support",
+            "Developed end-to-end full-stack features from PRDs and UI designs using React, JavaScript, CSS, and Firebase",
+            "Implemented React Context to manage shared state across 3+ levels of nested dashboard components and modals, reducing prop drilling",
+            "Improved accessibility by implementing keyboard navigation and screen-reader support in alignment with WCAG guidelines",
         ],
     },
     {
@@ -154,7 +163,20 @@ const About = () => {
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Certification</h2>
                     <div className='about-card rounded-xl p-6'>
                         <h3 className='text-lg font-bold'>Full Stack Web Development Bootcamp</h3>
-                        <p className='about-company text-base'>The University of Texas at Austin</p>
+                        <p className='about-company text-base'>The University of Texas at Austin — Center for Professional Education</p>
+                    </div>
+                </motion.section>
+
+                {/* Education */}
+                <motion.section className='mb-10' custom={5} variants={variants} initial="hidden" animate="visible">
+                    <h2 className='about-section-title text-2xl font-bold mb-4'>Education</h2>
+                    <div className='flex flex-col gap-4'>
+                        {education.map((edu) => (
+                            <div key={edu.school} className='about-card rounded-xl p-6'>
+                                <h3 className='text-lg font-bold'>{edu.school}</h3>
+                                <p className='about-company text-base'>{edu.degree}</p>
+                            </div>
+                        ))}
                     </div>
                 </motion.section>
             </div>
