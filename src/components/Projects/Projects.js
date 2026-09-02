@@ -51,10 +51,10 @@ function Projects() {
             name='Projects'
             className='current-page w-full min-h-screen py-24'
         >
-            <div className='max-w-[900px] mx-auto px-6 md:px-8'>
+            <div className='max-w-[900px] mx-auto px-4 sm:px-6 md:px-8'>
                 {/* Header */}
                 <motion.div className='text-center mb-12' custom={0} variants={variants} initial="hidden" animate="visible">
-                    <h1 tabIndex={-1} className='text-5xl md:text-6xl font-bold'>
+                    <h1 tabIndex={-1} className='text-4xl sm:text-5xl md:text-6xl font-bold'>
                         <span className="gradient-heading">
                             Projects
                         </span>
@@ -74,7 +74,7 @@ function Projects() {
                         >
                             <div className='flex flex-col md:flex-row'>
                                 {/* Image */}
-                                <div className='project-image-wrapper md:w-2/5 flex-shrink-0 h-52 md:h-auto bg-black/30'>
+                                <div className='project-image-wrapper md:w-2/5 flex-shrink-0 h-52 sm:h-64 md:h-auto bg-black/30'>
                                     <img
                                         src={project.image}
                                         alt={project.imageAlt}
@@ -83,7 +83,7 @@ function Projects() {
                                 </div>
 
                                 {/* Content */}
-                                <div className='p-6 flex flex-col justify-between flex-1'>
+                                <div className='p-4 sm:p-6 flex flex-col justify-between flex-1 min-w-0'>
                                     <div>
                                         <h2 className='text-xl font-bold mb-2'>{project.name}</h2>
                                         <p className='project-desc text-sm mb-4 leading-relaxed'>{project.description}</p>

@@ -57,11 +57,14 @@ const Home = () => {
     data-theme="light"
     >
 
-    <div className='home-container w-full max-w-[1200px] mx-auto px-8 md:px-12 flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-20'>
+    {/* Extra left padding from lg up (vs. a symmetric lg:px-12) clears
+        Navbar's fixed sliding social rail, which starts appearing at the
+        same lg breakpoint and rests with a 60px edge showing at x=0-60. */}
+    <div className='home-container w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:pl-20 lg:pr-12 pt-16 lg:pt-8 flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-20'>
       {/* Text content */}
-      <div className='flex flex-col justify-center items-center md:items-start text-center md:text-left'>
+      <div className='flex flex-col justify-center items-center lg:items-start text-center lg:text-left'>
         <motion.p
-          className="home-greeting text-lg md:text-xl font-medium mb-2 tracking-wide"
+          className="home-greeting text-base sm:text-lg md:text-xl font-medium mb-2 tracking-wide"
           {...entrance(0.2)}
         >
           Hi there, I'm
@@ -69,7 +72,7 @@ const Home = () => {
 
         <motion.h1
           tabIndex={-1}
-          className="text-5xl md:text-8xl font-bold mb-4 md:mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 md:mb-6"
           style={{ x: phrase1X, y: phrase1Y }}
           {...entrance(0.3)}
         >
@@ -79,7 +82,7 @@ const Home = () => {
         </motion.h1>
 
         <motion.p
-          className="home-subtitle text-xl md:text-3xl font-semibold mb-4 md:mb-6"
+          className="home-subtitle text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-4 md:mb-6"
           style={{ x: phrase2X, y: phrase2Y }}
           {...entrance(0.4)}
         >
@@ -87,7 +90,7 @@ const Home = () => {
         </motion.p>
 
         <motion.p
-          className="home-tagline text-base md:text-xl mb-8 md:mb-10"
+          className="home-tagline text-sm sm:text-base md:text-lg lg:text-xl mb-8 md:mb-10"
           style={{ x: phrase3X, y: phrase3Y }}
           {...entrance(0.5)}
         >
@@ -95,7 +98,7 @@ const Home = () => {
         </motion.p>
 
         <motion.div
-          className="flex flex-wrap gap-4 justify-center md:justify-start"
+          className="flex flex-wrap gap-4 justify-center lg:justify-start"
           {...entrance(0.6)}
         >
           <Link to="/Projects" className="home-cta-primary">
@@ -109,7 +112,7 @@ const Home = () => {
 
       {/* Photo card */}
       <motion.div
-        className="home-photo-card w-[200px] md:w-[320px] flex-shrink-0"
+        className="home-photo-card w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] xl:w-[320px] max-w-full flex-shrink-0"
         initial={reduced ? { opacity: 1 } : { opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: reduced ? 0 : 0.3, duration: reduced ? 0.01 : 0.6, ease: "easeOut" }}

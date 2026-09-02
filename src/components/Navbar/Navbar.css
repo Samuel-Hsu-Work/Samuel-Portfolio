@@ -101,17 +101,29 @@ body[data-theme="dark"] .nav-social-icon:hover {
   position: fixed;
   inset: 0;
   margin: 0;
-  padding: 0;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   border: none;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   max-width: none;
   max-height: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
   z-index: 40;
+}
+
+/* Short/landscape viewports: vertically centering the menu can push the
+   top links and close button off-screen — align from the top instead so
+   everything stays reachable by scrolling within the dialog. */
+@media (max-height: 500px) {
+  .mobile-menu-dialog {
+    justify-content: flex-start;
+    padding-top: calc(env(safe-area-inset-top) + 72px);
+  }
 }
 
 .mobile-menu-dialog:not([open]) {
@@ -137,8 +149,8 @@ body[data-theme="dark"] .nav-social-icon:hover {
 
 .mobile-menu-close {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: calc(env(safe-area-inset-top) + 24px);
+  right: calc(env(safe-area-inset-right) + 24px);
   background: none;
   border: none;
   padding: 8px;

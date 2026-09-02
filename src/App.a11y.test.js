@@ -1,4 +1,4 @@
-import { render, screen, within, waitFor } from '@testing-library/react';
+import { render, screen, within, waitFor, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from 'jest-axe';
 import { MemoryRouter } from 'react-router-dom';
@@ -97,6 +97,40 @@ test('mobile menu dialog contains the nav links and a labeled close control', as
   expect(dialog).toHaveAttribute('aria-label', 'Mobile navigation');
   expect(within(dialog).getByRole('button', { name: /close navigation menu/i })).toBeInTheDocument();
   expect(within(dialog).getByRole('link', { name: 'Projects' })).toBeInTheDocument();
+});
+
+test('mobile menu closes when the viewport crosses the desktop breakpoint', async () => {
+  // Navbar.js closes the mobile <dialog> via a matchMedia('(min-width: 768px)')
+  // listener, while the same file's JSX switches visible nav layout via the
+  // Tailwind `md` breakpoint. Those two only agree because both point at
+  // 768px today — this test pins down that the JS side of the contract
+  // actually fires, since nothing else in the suite exercises it.
+  const listeners = {};
+  window.matchMedia = jest.fn().mockImplementation((query) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: (cb) => { listeners[query] = cb; },
+    removeListener: jest.fn(),
+    addEventListener: (event, cb) => { listeners[query] = cb; },
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  }));
+
+  renderShell('/');
+  const toggle = screen.getByRole('button', { name: /open navigation menu/i });
+  await userEvent.click(toggle);
+  expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  expect(document.getElementById('mobile-menu')).toHaveAttribute('open');
+
+  act(() => {
+    listeners['(min-width: 768px)']({ matches: true });
+  });
+
+  await waitFor(() => {
+    expect(screen.getByRole('button', { name: /open navigation menu/i })).toHaveAttribute('aria-expanded', 'false');
+  });
+  expect(document.getElementById('mobile-menu')).not.toHaveAttribute('open');
 });
 
 test('theme toggle has an accessible name and reflects checked state', async () => {

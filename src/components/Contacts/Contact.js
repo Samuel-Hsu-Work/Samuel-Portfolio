@@ -13,21 +13,21 @@ function Contact() {
       animate={{ opacity: 1, transition: { duration: reduced ? 0.01 : 0.5, ease: "easeOut" } }}
       exit={{ opacity: 0, transition: { duration: reduced ? 0.01 : 0.3, ease: "easeIn" } }}
       name='contact'
-      className='current-page w-full min-h-screen flex justify-center items-center p-4 py-24'>
+      className='current-page w-full min-h-screen flex justify-center items-center px-4 sm:px-6 py-16 sm:py-20 md:py-24'>
 
         <div className='flex flex-col max-w-[600px] w-full'>
           <div className='pb-8 text-center'>
-            <h1 tabIndex={-1} className='text-6xl font-bold'>Get In Touch</h1>
-            <p className='py-4 text-lg' style={{color: 'var(--muted-text-color)'}}>
+            <h1 tabIndex={-1} className='text-4xl sm:text-5xl md:text-6xl font-bold'>Get In Touch</h1>
+            <p className='py-4 text-base sm:text-lg' style={{color: 'var(--muted-text-color)'}}>
               Have a question or want to work together? Feel free to reach out.
             </p>
             <a
               href='mailto:samuelhsu.work@gmail.com'
-              className='inline-flex items-center gap-2 text-lg font-medium underline hover:scale-105 transition-all duration-300'
+              className='inline-flex items-center gap-2 text-base sm:text-lg font-medium underline hover:scale-105 transition-all duration-300 max-w-full'
               style={{color: 'var(--link-color)'}}
             >
-              <HiOutlineMail size={20} aria-hidden="true" focusable="false" />
-              samuelhsu.work@gmail.com
+              <HiOutlineMail size={20} aria-hidden="true" focusable="false" className='flex-shrink-0' />
+              <span style={{overflowWrap: 'anywhere'}}>samuelhsu.work@gmail.com</span>
             </a>
           </div>
 

@@ -143,7 +143,7 @@ const Navbar = () => {
                 </button>
                 <ul>
                     {navLinks.map(({ to, label }) => (
-                        <li key={to} className='py-6 text-4xl'>
+                        <li key={to} className='py-4 sm:py-6 text-3xl sm:text-4xl'>
                             <Link
                                 to={to}
                                 onClick={() => setNav(false)}

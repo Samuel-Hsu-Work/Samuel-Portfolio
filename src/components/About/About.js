@@ -83,10 +83,10 @@ const About = () => {
             name='about'
             className='current-page w-full min-h-screen py-24 overflow-y-auto'
         >
-            <div className='max-w-[900px] mx-auto px-6 md:px-8'>
+            <div className='max-w-[900px] mx-auto px-4 sm:px-6 md:px-8'>
                 {/* Header */}
                 <motion.div className='text-center mb-12' custom={0} variants={variants} initial="hidden" animate="visible">
-                    <h1 tabIndex={-1} className='text-5xl md:text-6xl font-bold mb-2'>
+                    <h1 tabIndex={-1} className='text-4xl sm:text-5xl md:text-6xl font-bold mb-2'>
                         <span className="gradient-heading">
                             Samuel Hsu
                         </span>
@@ -100,10 +100,10 @@ const About = () => {
                 {/* Skills */}
                 <motion.section className='mb-10' custom={1} variants={variants} initial="hidden" animate="visible">
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Skills</h2>
-                    <div className='about-card rounded-xl p-6'>
-                        <div className='flex flex-wrap gap-y-4'>
+                    <div className='about-card rounded-xl p-4 sm:p-6'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4'>
                             {skills.map(({ category, items }) => (
-                                <div key={category} className='w-full sm:w-1/2'>
+                                <div key={category}>
                                     <p className='about-category-label text-sm font-semibold uppercase tracking-wider mb-2'>{category}</p>
                                     <div className='flex flex-wrap gap-2'>
                                         {items.map((item) => (
@@ -121,7 +121,7 @@ const About = () => {
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Experience</h2>
                     <div className='flex flex-col gap-4'>
                         {experience.map((job) => (
-                            <div key={job.role + job.company} className='about-card rounded-xl p-6'>
+                            <div key={job.role + job.company} className='about-card rounded-xl p-4 sm:p-6'>
                                 <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1'>
                                     <h3 className='text-lg font-bold'>{job.role}</h3>
                                     <span className='about-period text-sm'>{job.period}</span>
@@ -143,9 +143,9 @@ const About = () => {
                 {/* Projects */}
                 <motion.section className='mb-10' custom={3} variants={variants} initial="hidden" animate="visible">
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Projects</h2>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                         {projects.map((project) => (
-                            <div key={project.name} className='about-card rounded-xl p-6'>
+                            <div key={project.name} className='about-card rounded-xl p-4 sm:p-6'>
                                 <h3 className='text-lg font-bold mb-1'>{project.name}</h3>
                                 <p className='about-desc text-sm mb-3'>{project.desc}</p>
                                 <div className='flex flex-wrap gap-1.5'>
@@ -161,7 +161,7 @@ const About = () => {
                 {/* Certification */}
                 <motion.section className='mb-10' custom={4} variants={variants} initial="hidden" animate="visible">
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Certification</h2>
-                    <div className='about-card rounded-xl p-6'>
+                    <div className='about-card rounded-xl p-4 sm:p-6'>
                         <h3 className='text-lg font-bold'>Full Stack Web Development Bootcamp</h3>
                         <p className='about-company text-base'>The University of Texas at Austin — Center for Professional Education</p>
                     </div>
@@ -172,7 +172,7 @@ const About = () => {
                     <h2 className='about-section-title text-2xl font-bold mb-4'>Education</h2>
                     <div className='flex flex-col gap-4'>
                         {education.map((edu) => (
-                            <div key={edu.school} className='about-card rounded-xl p-6'>
+                            <div key={edu.school} className='about-card rounded-xl p-4 sm:p-6'>
                                 <h3 className='text-lg font-bold'>{edu.school}</h3>
                                 <p className='about-company text-base'>{edu.degree}</p>
                             </div>

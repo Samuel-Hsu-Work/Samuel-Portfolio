@@ -46,15 +46,10 @@
   text-decoration: none;
 }
 
-/* Offset for fixed navbar so content centers in remaining space */
+/* Offset for fixed navbar so content centers in remaining space.
+   Width-dependent padding-top now lives on the element itself (pt-16
+   lg:pt-8 in Home.js) alongside the rest of its Tailwind breakpoints,
+   rather than duplicating a 768px cutoff here. */
 .home-container {
-  padding-top: 2rem;
   padding-bottom: 6rem;
-}
-
-@media (max-width: 768px) {
-  .home-container {
-    padding-top: 4rem;
-    gap: 2rem;
-  }
 }
