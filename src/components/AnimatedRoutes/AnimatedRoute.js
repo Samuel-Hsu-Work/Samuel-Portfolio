@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { Route, Navigate, Routes, useLocation } from "react-router-dom";
 
-import Home from "../Home/Home.js";
-import About from "../About/About.js";
-import Projects from "../Projects/Projects.js";
-import Contact from "../Contacts/Contact.js";
+import Home from "../../pages/Home/Home.js";
+import About from "../../pages/About/About.js";
+import Projects from "../../pages/Projects/Projects.js";
+import Contact from "../../pages/Contact/Contact.js";
 import {AnimatePresence} from 'framer-motion'
 import { normalizePath } from '../../utils/normalizePath.js';
 

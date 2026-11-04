@@ -5,9 +5,9 @@ import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from './components/ThemeContext/ThemeContext.js';
 import App, { AppShell } from './App.js';
 import DarkMode from './components/DarkMode/DarkMode.js';
-import Contact, { CONTACT_FORM_ENDPOINT } from './components/Contacts/Contact.js';
-import Projects from './components/Projects/Projects.js';
-import { projectCatalog } from './components/Projects/projectCatalog.js';
+import Contact, { CONTACT_FORM_ENDPOINT } from './pages/Contact/Contact.js';
+import Projects from './pages/Projects/Projects.js';
+import { projectCatalog } from './pages/Projects/projectCatalog.js';
 
 function renderShell(initialPath) {
   return render(
