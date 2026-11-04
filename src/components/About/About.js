@@ -1,5 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './About.css';
+import { projectCatalog } from '../Projects/projectCatalog';
 
 const fadeUp = (reduced) => ({
     hidden: reduced ? { opacity: 1 } : { opacity: 0, y: 20 },
@@ -55,19 +57,6 @@ const experience = [
         highlights: [
             "Designed QA tests that uncovered a session-isolation security defect before release",
         ],
-    },
-];
-
-const projects = [
-    {
-        name: "Music Hub",
-        desc: "Music community platform with AI-generated forum topics",
-        stack: ["TypeScript", "React", "Next.js", "Python", "PostgreSQL", "OpenAI API"],
-    },
-    {
-        name: "QA-Report App",
-        desc: "Internal QA tool for screen recordings and bug reporting",
-        stack: ["React", "Node.js", "Express", "MongoDB", "GCP"],
     },
 ];
 
@@ -142,12 +131,17 @@ const About = () => {
 
                 {/* Projects */}
                 <motion.section className='mb-10' custom={3} variants={variants} initial="hidden" animate="visible">
-                    <h2 className='about-section-title text-2xl font-bold mb-4'>Projects</h2>
+                    <div className='flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-4'>
+                        <h2 className='about-section-title text-2xl font-bold'>Projects</h2>
+                        <Link to='/Projects' className='about-all-projects-link text-sm font-medium underline'>
+                            View all projects with live demos
+                        </Link>
+                    </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                        {projects.map((project) => (
+                        {projectCatalog.map((project) => (
                             <div key={project.name} className='about-card rounded-xl p-4 sm:p-6'>
                                 <h3 className='text-lg font-bold mb-1'>{project.name}</h3>
-                                <p className='about-desc text-sm mb-3'>{project.desc}</p>
+                                <p className='about-desc text-sm mb-3'>{project.summary}</p>
                                 <div className='flex flex-wrap gap-1.5'>
                                     {project.stack.map((tech) => (
                                         <span key={tech} className='about-stack-tag px-2 py-0.5 rounded text-xs font-mono'>{tech}</span>

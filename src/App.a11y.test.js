@@ -5,8 +5,9 @@ import { MemoryRouter } from 'react-router-dom';
 import { ThemeProvider } from './components/ThemeContext/ThemeContext.js';
 import App, { AppShell } from './App.js';
 import DarkMode from './components/DarkMode/DarkMode.js';
-import Contact from './components/Contacts/Contact.js';
+import Contact, { CONTACT_FORM_ENDPOINT } from './components/Contacts/Contact.js';
 import Projects from './components/Projects/Projects.js';
+import { projectCatalog } from './components/Projects/projectCatalog.js';
 
 function renderShell(initialPath) {
   return render(
@@ -176,4 +177,66 @@ test('decorative icons in the Contact form are hidden from the accessibility tre
   const { container } = render(<Contact />);
   const decorativeIcons = container.querySelectorAll('svg[aria-hidden="true"]');
   expect(decorativeIcons.length).toBeGreaterThan(0);
+});
+
+describe('Contact form submission', () => {
+  const originalFetch = global.fetch;
+  afterEach(() => {
+    global.fetch = originalFetch;
+  });
+
+  async function fillAndSubmitContactForm() {
+    render(<Contact />);
+    await userEvent.type(screen.getByLabelText(/your name/i), 'Jane Doe');
+    await userEvent.type(screen.getByLabelText(/your email/i), 'jane@example.com');
+    await userEvent.type(screen.getByLabelText(/your message/i), 'Hello there');
+    await userEvent.click(screen.getByRole('button', { name: /send message/i }));
+  }
+
+  test('submits in place, announces success, and clears the form', async () => {
+    global.fetch = jest.fn().mockResolvedValue({ ok: true, status: 200 });
+    await fillAndSubmitContactForm();
+
+    expect(await screen.findByRole('status')).toHaveTextContent(/your message was sent/i);
+    expect(global.fetch).toHaveBeenCalledWith(
+      CONTACT_FORM_ENDPOINT,
+      expect.objectContaining({ method: 'POST' })
+    );
+    expect(screen.getByLabelText(/your name/i)).toHaveValue('');
+  });
+
+  test('fields cannot be edited while a slow submission is in flight', async () => {
+    let resolveSubmission;
+    global.fetch = jest.fn(() => new Promise((resolve) => { resolveSubmission = resolve; }));
+    await fillAndSubmitContactForm();
+
+    const messageField = screen.getByLabelText(/your message/i);
+    expect(screen.getByRole('button', { name: /sending/i })).toBeDisabled();
+    expect(messageField).toHaveAttribute('readonly');
+    await userEvent.type(messageField, ' (unsent edit)');
+    expect(messageField).toHaveValue('Hello there');
+
+    await act(async () => resolveSubmission({ ok: true, status: 200 }));
+    expect(screen.getByRole('status')).toHaveTextContent(/your message was sent/i);
+    expect(messageField).not.toHaveAttribute('readonly');
+  });
+
+  test('announces a failure and keeps what the visitor typed', async () => {
+    global.fetch = jest.fn().mockResolvedValue({ ok: false, status: 500 });
+    await fillAndSubmitContactForm();
+
+    await waitFor(() =>
+      expect(screen.getByRole('status')).toHaveTextContent(/couldn't be sent/i)
+    );
+    expect(screen.getByLabelText(/your message/i)).toHaveValue('Hello there');
+  });
+});
+
+test('About lists every project shown on the Projects page', () => {
+  renderShell('/about');
+  const main = screen.getByRole('main');
+  for (const project of projectCatalog) {
+    expect(within(main).getByRole('heading', { name: project.name })).toBeInTheDocument();
+  }
+  expect(within(main).getByRole('link', { name: /view all projects/i })).toHaveAttribute('href', '/Projects');
 });

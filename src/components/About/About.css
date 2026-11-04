@@ -102,3 +102,8 @@ body[data-theme="dark"] .about-stack-tag {
     background: rgba(255, 255, 255, 0.08);
     color: var(--muted-text-color);
 }
+
+/* "View all projects" link beside the Projects section heading */
+.about-all-projects-link {
+    color: var(--link-color);
+}

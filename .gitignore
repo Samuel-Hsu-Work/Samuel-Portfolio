@@ -9,3 +9,6 @@
 
 # Claude Code local permission settings (machine/session-specific)
 /.claude/settings.json
+
+# Playwright MCP snapshots
+.playwright-mcp/

@@ -1,9 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
-import MusicPage from "./MusicPage.png";
-import QAreport from "./QAreport.png";
-import AICalendarAssistant from "./AICalendarAssistant.png";
+import { projectCatalog } from './projectCatalog';
 
 const fadeUp = (reduced) => ({
     hidden: reduced ? { opacity: 1 } : { opacity: 0, y: 20 },
@@ -12,32 +10,6 @@ const fadeUp = (reduced) => ({
         : { opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" } }
 });
 
-const projects = [
-    {
-        name: "Music Hub",
-        description: "A music community platform with forum features. Leverages Next.js server and client components for SEO and dynamic UI, with a Python background worker automating daily AI-generated music-theory discussions.",
-        image: MusicPage,
-        imageAlt: "Music Hub community forum page showing AI-generated music-theory discussion threads",
-        stack: ["TypeScript", "React", "Next.js", "Python", "PostgreSQL", "OpenAI API"],
-        demo: "https://musician-community-platform.vercel.app/",
-    },
-    {
-        name: "QAreport",
-        description: "An internal QA reporting tool built to improve testing efficiency at Tristyn Tech. Allows testers to upload screen recordings and bug descriptions, helping developers diagnose issues that are difficult to reproduce.",
-        image: QAreport,
-        imageAlt: "QAreport tool interface for uploading screen recordings and bug descriptions",
-        stack: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Google Cloud Platform"],
-        demo: "https://qa-report.vercel.app/",
-    },
-    {
-        name: "AI Calendar Assistant",
-        description: "An AI-powered calendar assistant that lets you schedule, move, and delete events through natural language chat. Features a visible agent pipeline for intent detection, validation, and CRUD execution against a live calendar view.",
-        image: AICalendarAssistant,
-        imageAlt: "AI Calendar Assistant chat interface alongside a live calendar view",
-        stack: ["TypeScript", "React", "OpenAI API"],
-        demo: "https://ai-scheduling-assistant-theta.vercel.app/",
-    },
-];
 
 function Projects() {
     const reduced = useReducedMotion();
@@ -63,7 +35,7 @@ function Projects() {
 
                 {/* Project Cards */}
                 <div className='flex flex-col gap-6'>
-                    {projects.map((project, index) => (
+                    {projectCatalog.map((project, index) => (
                         <motion.article
                             key={project.name}
                             className='project-card rounded-xl overflow-hidden'

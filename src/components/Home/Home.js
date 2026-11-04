@@ -86,7 +86,7 @@ const Home = () => {
           style={{ x: phrase2X, y: phrase2Y }}
           {...entrance(0.4)}
         >
-          A Full Stack Web Developer
+          Full-Stack Engineer Building AI-Powered Products
         </motion.p>
 
         <motion.p
@@ -94,7 +94,7 @@ const Home = () => {
           style={{ x: phrase3X, y: phrase3Y }}
           {...entrance(0.5)}
         >
-          Turning Ideas into Interactive Experiences
+          From LLM agents to the full-stack apps people use them through
         </motion.p>
 
         <motion.div
